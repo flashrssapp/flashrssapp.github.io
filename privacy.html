@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Flash RSS Reader</title>
+<meta name="description" content="Flash RSS Reader collects no personal data. This policy lists every connection the app makes, what it sends and why.">
+<link rel="canonical" href="https://flashrssapp.github.io/privacy.html">
+<meta name="theme-color" content="#14a08b">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Ccircle cx='256' cy='256' r='256' fill='%2314A08B'/%3E%3Cpath d='M317 44 L144 286 L231 292 L198 468 L376 202 L287 198 Z' fill='%230E1112'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="nameplate" href="index.html">
+      <svg class="bolt" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
+        <circle cx="256" cy="256" r="256" fill="#14A08B"/>
+        <path d="M317 44 L144 286 L231 292 L198 468 L376 202 L287 198 Z" fill="#0B2320"/>
+      </svg>
+      Flash
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="privacy.html" aria-current="page">Privacy</a>
+      <a href="support.html">Support</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <h1>Privacy Policy</h1>
+    <p class="meta">Effective 9 September 2026. Applies to the Flash RSS Reader Android application, package <code>io.getflash.app</code>.</p>
+
+    <div class="panel accent">
+      <p><strong>The short version.</strong> Flash has no accounts and no servers. It collects no personal data, contains no analytics or advertising software, and stores everything you do inside the app on your own device. The sections below list every network connection the app can make and exactly what each one sends.</p>
+    </div>
+
+    <h2>Who we are</h2>
+
+    <p>Flash RSS Reader is published by <strong>DVM Software</strong>, a sole trader based in Barcelona, Spain, and the data controller for the purposes of the EU General Data Protection Regulation.</p>
+
+    <p>You can reach us at any time at <a href="mailto:flashrssapp@gmail.com">flashrssapp@gmail.com</a>.</p>
+
+    <h2>What we collect</h2>
+
+    <p><strong>Nothing.</strong> We operate no server, no database and no account system. We cannot see your feeds, what you read, what you block, what you bookmark or when you open the app, because none of that is ever sent to us.</p>
+
+    <p>All of the following is written to a database stored privately on your device and stays there:</p>
+
+    <ul class="plain-list">
+      <li>The feeds you subscribe to and the folders you organise them into</li>
+      <li>Articles fetched from those feeds, and which of them you have read</li>
+      <li>Your bookmarks</li>
+      <li>Your keyword blocklist and keyword alerts, and the alerts they have caught</li>
+      <li>Your settings</li>
+    </ul>
+
+    <h2>Permissions the app requests</h2>
+
+    <dl>
+      <dt>Internet access</dt>
+      <dd>To fetch your feeds and open articles. Without it the app cannot do anything.</dd>
+
+      <dt>Notifications</dt>
+      <dd>Used only for keyword alerts you have set up yourself, and for the optional unread-count badge on launchers that cannot draw one natively.</dd>
+
+      <dt>Run at startup, and prevent sleeping</dt>
+      <dd>So scheduled background refreshes survive a reboot and can finish once started.</dd>
+    </dl>
+
+    <p>Flash does <strong>not</strong> request location, camera, microphone, contacts, calendar, phone or file storage access.</p>
+
+    <h2>Every connection the app makes</h2>
+
+    <table>
+      <thead>
+        <tr><th>Goes to</th><th>What is sent</th><th>When</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>The feed addresses you added</td>
+          <td>An ordinary web request for the feed</td>
+          <td>Every refresh</td>
+        </tr>
+        <tr>
+          <td>The website an article is published on</td>
+          <td>A normal page load, minus the ad and tracker domains Flash blocks</td>
+          <td>Only when you open an article</td>
+        </tr>
+        <tr>
+          <td>Google's public favicon service</td>
+          <td>The domain name of the feed, to fetch its icon</td>
+          <td>Once, when you add a feed</td>
+        </tr>
+        <tr>
+          <td>Feedly's public search API</td>
+          <td>The words you type into feed search</td>
+          <td>Only while searching for a feed to add</td>
+        </tr>
+        <tr>
+          <td>Firebase AI Logic, which passes it to Google's Gemini API</td>
+          <td>The article's title and roughly the first 2,500 characters of its text</td>
+          <td>Only when you tap the summary button, and only on devices without on-device AI</td>
+        </tr>
+        <tr>
+          <td>Google Play Integrity</td>
+          <td>A signal confirming the app is genuine and unmodified</td>
+          <td>Alongside a cloud summary request, to stop abuse of the service</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>That is the complete list. There is no seventh row.</p>
+
+    <h3>About the AI summary</h3>
+
+    <p>Summarising is the only feature that can send the content of an article anywhere, and it does so only when you press the button.</p>
+
+    <p>On phones with Google's on-device Gemini Nano, the summary is generated <strong>entirely on your handset</strong>. Nothing is transmitted at all, and it works with no connection.</p>
+
+    <p>On phones without it, the title and an extract of the article are sent to Google's Gemini API through Firebase AI Logic to generate the summary, and the result is returned. No identifier for you or your device accompanies it. We do not receive, log or store either the request or the response. Google's handling of that data is governed by the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a> and the Gemini API terms.</p>
+
+    <h3>About backups</h3>
+
+    <p>Flash relies on <strong>Android Auto Backup</strong>, a feature of the Android operating system, which copies app data to your own Google Drive account and restores it when you reinstall or move to a new phone. This is done by Android under your own device settings, not by us, and we have no access to it. You can turn it off in your device's system settings.</p>
+
+    <p>Separately, Flash can export your feeds, folders and blocklist to a file that you save wherever you choose. That file goes only where you send it.</p>
+
+    <h2>Analytics, advertising and tracking</h2>
+
+    <p>Flash contains no analytics library, no crash-reporting library and no advertising library. It does not read your advertising identifier, does not build a profile of you and does not share, sell or transfer any information to third parties, because it holds none to share.</p>
+
+    <p>The in-app reader actively <strong>blocks</strong> known advertising and tracking domains while you read, and suppresses websites' notification permission prompts before they can be shown.</p>
+
+    <h2>Children</h2>
+
+    <p>Flash is a general-audience news reader. It is not directed at children under 13, and we do not knowingly collect information from anyone, of any age.</p>
+
+    <h2>Your rights</h2>
+
+    <p>Under the GDPR you have rights of access, correction, erasure, restriction, objection and portability over personal data a company holds about you. In our case there is nothing to exercise them against, because we hold no data about you.</p>
+
+    <p>The data inside the app belongs to you and is under your control: you can delete any feed, article, bookmark or keyword at any time, export your subscriptions to a file, and remove everything permanently by uninstalling the app.</p>
+
+    <p>If you believe your data has been mishandled you may complain to your national supervisory authority. In Spain this is the <span>Agencia Española de Protección de Datos</span>.</p>
+
+    <h2>Changes to this policy</h2>
+
+    <p>If this policy changes, the effective date at the top of the page changes with it, and any change that affects what the app sends will be described in the release notes for the version that introduces it.</p>
+
+    <h2>Contact</h2>
+
+    <p>Questions about this policy, or about anything else:</p>
+
+    <div class="panel">
+      <p><strong>DVM Software</strong><br>
+      Barcelona, Spain<br>
+      <a href="mailto:flashrssapp@gmail.com">flashrssapp@gmail.com</a></p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+    <p>Flash RSS Reader is published by DVM Software, Barcelona, Spain.</p>
+    <p>Contact: <a href="mailto:flashrssapp@gmail.com">flashrssapp@gmail.com</a></p>
+    <p class="fine">This site loads no third-party resources, sets no cookies and runs no analytics.</p>
+  </div>
+</footer>
+
+</body>
+</html>
