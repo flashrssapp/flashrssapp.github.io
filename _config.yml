@@ -1,0 +1,5 @@
+# Build settings only; the pages themselves are plain HTML.
+# DESIGN-HANDOFF.md holds app strings with {{count}} plurals that Jekyll's
+# template engine cannot parse; every build that included it failed.
+exclude:
+  - DESIGN-HANDOFF.md
