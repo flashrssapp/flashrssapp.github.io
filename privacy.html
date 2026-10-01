@@ -34,10 +34,10 @@
   <div class="wrap">
 
     <h1>Privacy Policy</h1>
-    <p class="meta">Effective 9 September 2026. Applies to the Flash RSS Reader Android application, package <code>io.getflash.app</code>.</p>
+    <p class="meta">Effective 1 October 2026. Applies to the Flash RSS Reader Android application, package <code>io.getflash.app</code>.</p>
 
     <div class="panel accent">
-      <p><strong>The short version.</strong> Flash has no accounts and no servers. It collects no personal data, contains no analytics or advertising software today, and stores everything you do inside the app on your own device. The sections below list every network connection the app can make and exactly what each one sends, and flag one thing that is planned but not yet built.</p>
+      <p><strong>The short version.</strong> Flash has no accounts and no servers. We collect no personal data, Flash contains no analytics software, and everything you do inside the app is stored on your own device. The version with ads uses Google AdMob, described below. The sections below list every network connection the app can make and exactly what each one sends.</p>
     </div>
 
     <h2>Who we are</h2>
@@ -67,7 +67,10 @@
       <dd>To fetch your feeds and open articles. Without it the app cannot do anything.</dd>
 
       <dt>Notifications</dt>
-      <dd>Used only for keyword alerts you have set up yourself, and for the optional unread-count badge on launchers that cannot draw one natively.</dd>
+      <dd>Two separate switches in Settings, both off until you turn them on: <strong>Unread articles</strong> (a notification and the app-icon badge with how many new articles arrived) and <strong>Keyword alerts</strong> (a notification when a keyword you set up matches an article).</dd>
+
+      <dt>Advertising ID (version with ads only)</dt>
+      <dd>Read by Google AdMob to serve and measure ads, within the choices you make in the consent form. The paid version never starts the ads software.</dd>
 
       <dt>Run at startup, and prevent sleeping</dt>
       <dd>So scheduled background refreshes survive a reboot and can finish once started.</dd>
@@ -104,26 +107,41 @@
         </tr>
         <tr>
           <td>Firebase AI Logic, which passes it to Google's Gemini API</td>
-          <td>The article's title and roughly the first 2,500 characters of its text</td>
-          <td>Only when you tap the summary button, and only on devices without on-device AI</td>
+          <td>The article's title and its cleaned text</td>
+          <td>Only when you tap the summary button, and only on phones without Google's on-device model, or for an article too long for it</td>
         </tr>
         <tr>
           <td>Google Play Integrity</td>
           <td>A signal confirming the app is genuine and unmodified</td>
           <td>Alongside a cloud summary request, to stop abuse of the service</td>
         </tr>
+        <tr>
+          <td>Firebase Remote Config</td>
+          <td>A Firebase installation identifier and the app version, to fetch the daily summary limits</td>
+          <td>When the app starts</td>
+        </tr>
+        <tr>
+          <td>Google AdMob, with Google's consent form</td>
+          <td>Your advertising ID, device and usage data (such as your device model, IP address and how you interact with ads), and your consent choices, for ads and their measurement</td>
+          <td>Only in the version with ads: the consent form first, then while ads are shown in your feed</td>
+        </tr>
+        <tr>
+          <td>Google Play Billing</td>
+          <td>Your purchase of the one-time unlock, handled by Google Play</td>
+          <td>When you buy or restore the unlock, and when the app starts, to check it</td>
+        </tr>
       </tbody>
     </table>
 
-    <p>That is the complete list. There is no seventh row.</p>
+    <p>That is the complete list.</p>
 
     <h3>About the AI summary</h3>
 
     <p>Summarising is the only feature that can send the content of an article anywhere, and it does so only when you press the button.</p>
 
-    <p>On phones with Google's on-device Gemini Nano, the summary is generated <strong>entirely on your handset</strong>. Nothing is transmitted at all, and it works with no connection.</p>
+    <p>On phones with Google's on-device model (Gemini Nano), the summary is made <strong>on your phone</strong> and nothing leaves it.</p>
 
-    <p>On phones without it, the title and an extract of the article are sent to Google's Gemini API through Firebase AI Logic to generate the summary, and the result is returned. No identifier for you or your device accompanies it. We do not receive, log or store either the request or the response. Google's handling of that data is governed by the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a> and the Gemini API terms.</p>
+    <p>Otherwise, or if an article is too long for the on-device model, the article's cleaned text is sent to Google's Gemini service, through Firebase AI Logic, to make the summary. On the free Gemini tier, Google may use that text to improve its services. Flash never stores, reads or shares the article or the summary on any server, and nobody at Flash sees it. The app says this in a short sheet before the first summary is sent. Google's handling of that data is governed by the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a> and the Gemini API terms.</p>
 
     <h3>About backups</h3>
 
@@ -133,24 +151,24 @@
 
     <h2>Analytics, advertising and tracking</h2>
 
-    <p><strong>As of the date at the top of this page, Flash contains no analytics library, no crash-reporting library and no advertising library.</strong> It does not read your advertising identifier, does not build a profile of you, and does not share, sell or transfer any information to third parties.</p>
+    <p><strong>Flash contains no analytics library and no crash-reporting library.</strong> We do not build a profile of you, and we do not sell or share information about you. The only advertising is in the version with ads, through Google AdMob, as described below.</p>
 
     <p>The in-app reader actively <strong>blocks</strong> known advertising and tracking domains while you read, and suppresses websites' notification permission prompts before they can be shown. That stays true in every version.</p>
 
-    <h3>Planned: advertising in the version with ads</h3>
+    <h3>Advertising in the version with ads</h3>
 
-    <p>When Flash is released it will come in two versions only: one with ads in your feed and a daily limit on AI summaries, and a one-time paid unlock with no advertising at all. There is no version without one or the other. Pre-release test builds contain no advertising.</p>
-
-    <p>Saying so here in advance rather than quietly amending this page later, because a privacy policy that changes without warning is worth nothing. When advertising does ship:</p>
+    <p>Flash comes in two versions only: one with ads in your feed and a daily limit on AI summaries, and a one-time paid unlock with no advertising. There is no version without one or the other.</p>
 
     <ul class="plain-list">
-      <li>This page will be updated <strong>before</strong> that version is released, with a new effective date</li>
-      <li>The advertising provider and what it receives will be named here in full</li>
-      <li>You will be asked for consent before any personalised advertising is served, as EU law requires, and declining will remain a real option rather than a dead end</li>
-      <li>The paid version will carry no advertising and no advertising identifier</li>
+      <li>The advertising provider is <strong>Google AdMob</strong>. It receives your advertising ID, device and usage data (such as your device model, IP address and how you interact with ads) for ads and measurement. See <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">how Google uses information from apps that use its services</a>.</li>
+      <li>Before any ad is requested, Google's consent form asks for your choice, as EU law requires. If you do not consent, only non-personalised ads are shown. You can change your choice at any time in Settings, under <strong>Privacy options</strong>.</li>
+      <li>Ads appear only in the main feed. Never in the reader, your bookmarks, keywords, search or the summary sheet.</li>
+      <li>The paid version shows no ads and never starts the ads software.</li>
     </ul>
 
-    <p>What will not change, in either version: no analytics SDK, no profile of your reading, and nothing about you sold or shared for any purpose beyond serving the advert itself.</p>
+    <h3>Purchases</h3>
+
+    <p>The one-time unlock is bought through <strong>Google Play</strong>, which handles the payment. Flash only learns whether the unlock was bought; it never sees your payment details.</p>
 
     <h2>Children</h2>
 
