@@ -34,7 +34,7 @@
   <div class="wrap">
 
     <h1>Privacy Policy</h1>
-    <p class="meta">Effective 1 October 2026. Applies to the Flash RSS Reader Android application, package <code>io.getflash.app</code>.</p>
+    <p class="meta">Effective 6 October 2026. Applies to the Flash RSS Reader Android application, package <code>io.getflash.app</code>.</p>
 
     <div class="panel accent">
       <p><strong>The short version.</strong> Flash has no accounts and no servers. We collect no personal data, Flash contains no analytics software, and everything you do inside the app is stored on your own device. The version with ads uses Google AdMob, described below. The sections below list every network connection the app can make and exactly what each one sends.</p>
@@ -58,6 +58,7 @@
       <li>Your bookmarks</li>
       <li>Your keyword blocklist and keyword alerts, and the alerts they have caught</li>
       <li>Your settings</li>
+      <li>Your Gemini API key, if you add one, encrypted with the Android Keystore</li>
     </ul>
 
     <h2>Permissions the app requests</h2>
@@ -106,19 +107,9 @@
           <td>Only while searching for a feed to add</td>
         </tr>
         <tr>
-          <td>Firebase AI Logic, which passes it to Google's Gemini API</td>
-          <td>The article's title and its cleaned text</td>
-          <td>Only when you tap the summary button, and only on phones without Google's on-device model, or for an article too long for it</td>
-        </tr>
-        <tr>
-          <td>Google Play Integrity</td>
-          <td>A signal confirming the app is genuine and unmodified</td>
-          <td>Alongside a cloud summary request, to stop abuse of the service</td>
-        </tr>
-        <tr>
-          <td>Firebase Remote Config</td>
-          <td>A Firebase installation identifier and the app version, to fetch the daily summary limits</td>
-          <td>When the app starts</td>
+          <td>Google's Gemini API, using your own API key</td>
+          <td>The article's title and its cleaned text, with your API key (in a request header, never in the web address). When you save a key, one short test message instead</td>
+          <td>Only if you added your own key: when you tap the summary button on a phone without Google's on-device model, or for an article too long for it; and once when you save the key</td>
         </tr>
         <tr>
           <td>Google AdMob, with Google's consent form</td>
@@ -136,16 +127,15 @@
     <p>That is the complete list.</p>
 
     <h3>About the AI summary</h3>
-
     <p>Summarising is the only feature that can send the content of an article anywhere, and it does so only when you press the button.</p>
-
-    <p>On phones with Google's on-device model (Gemini Nano), the summary is made <strong>on your phone</strong> and nothing leaves it.</p>
-
-    <p>Otherwise, or if an article is too long for the on-device model, the article's cleaned text is sent to Google's Gemini service, through Firebase AI Logic, to make the summary. On the free Gemini tier, Google may use that text to improve its services. Flash never stores, reads or shares the article or the summary on any server, and nobody at Flash sees it. The app says this in a short sheet before the first summary is sent. Google's handling of that data is governed by the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a> and the Gemini API terms.</p>
+    <p>On supported phones (those with Google's on-device model, Gemini Nano), the summary is made <strong>on your phone</strong> and nothing leaves it.</p>
+    <p>On other phones, and for an article too long for the on-device model, Flash can summarise only if you add your own Gemini API key in Settings, under <strong>Advanced</strong>. The article's cleaned text then goes straight from your phone to Google's Gemini API, under your key and your Google account. Any cost is between you and Google, at <a href="https://ai.google.dev/gemini-api/docs/pricing" rel="noopener">Google's prices</a>. Flash has no server in between and no AI account of its own, never stores, reads or shares the article or the summary, and nobody at Flash sees it. The app says this in a short sheet before the first summary is sent. Without a key, a phone without the on-device model has no summaries and sends nothing.</p>
+    <p>How Google may use that text is set by the <a href="https://ai.google.dev/gemini-api/terms" rel="noopener">Gemini API terms</a> and the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>. In the European Economic Area, Switzerland and the United Kingdom, Google does not use it to improve its products, including on free quota. Elsewhere, on Google's free tier, Google may use it to improve its products; on a paid tier it does not.</p>
+    <p>Your key stays on your phone, encrypted with the Android Keystore. It is not included in Android's backup or in Flash's export files, and the app sends it only to Google, with these requests. You can remove it at any time in Settings, under <strong>Advanced</strong>.</p>
 
     <h3>About backups</h3>
 
-    <p>Flash relies on <strong>Android Auto Backup</strong>, a feature of the Android operating system, which copies app data to your own Google Drive account and restores it when you reinstall or move to a new phone. This is done by Android under your own device settings, not by us, and we have no access to it. You can turn it off in your device's system settings.</p>
+    <p>Flash relies on <strong>Android Auto Backup</strong>, a feature of the Android operating system, which copies app data to your own Google Drive account and restores it when you reinstall or move to a new phone. This is done by Android under your own device settings, not by us, and we have no access to it. Your Gemini API key is never included. You can turn it off in your device's system settings.</p>
 
     <p>Separately, Flash can export your feeds, folders and blocklist to a file that you save wherever you choose. That file goes only where you send it.</p>
 
@@ -157,7 +147,7 @@
 
     <h3>Advertising in the version with ads</h3>
 
-    <p>Flash comes in two versions only: one with ads in your feed and a daily limit on AI summaries, and a one-time paid unlock with no advertising. There is no version without one or the other.</p>
+    <p>Flash comes in two versions only: one with ads in your feed, and a one-time paid unlock with no advertising. Nothing else differs between them. There is no version without one or the other.</p>
 
     <ul class="plain-list">
       <li>The advertising provider is <strong>Google AdMob</strong>. It receives your advertising ID, device and usage data (such as your device model, IP address and how you interact with ads) for ads and measurement. See <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">how Google uses information from apps that use its services</a>.</li>
