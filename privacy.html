@@ -45,18 +45,18 @@
     <p class="meta">Effective 6 October 2026. Applies to the Flash RSS Reader Android application, package <code>io.getflash.app</code>.</p>
 
     <div class="panel accent">
-      <p><strong>The short version.</strong> Flash has no accounts and no servers. We collect no personal data, Flash contains no analytics software, and everything you do inside the app is stored on your own device. The version with ads uses Google AdMob, described below. The sections below list every network connection the app can make and exactly what each one sends.</p>
+      <p><strong>The short version.</strong> Flash has no accounts and no servers, and its developer receives nothing about you: your feeds, reading, bookmarks and settings stay on your device. Some parts of the app do send data to other companies, each for one job: Google AdMob (only in the version with ads, and only after the consent form), Google Play Billing (the purchase), Feedly (feed search), Google Gemini (summaries, only with your own key and only when you ask), Google's ML Kit (its own diagnostics for on-device summaries), and the websites whose feeds you add. The sections below list every connection and exactly what each one sends.</p>
     </div>
 
     <h2>Who we are</h2>
 
-    <p>Flash RSS Reader is published by <strong>DVM Software</strong>, a sole trader based in Barcelona, Spain, and the data controller for the purposes of the EU General Data Protection Regulation.</p>
+    <p>Flash RSS Reader is published by <strong>DVM Software</strong>, the trade name of [LEGAL NAME], [CONTACT ADDRESS], Spain, who is the data controller for the purposes of the EU General Data Protection Regulation.</p>
 
     <p>You can reach us at any time at <a href="mailto:flashrssapp@gmail.com">flashrssapp@gmail.com</a>.</p>
 
-    <h2>What we collect</h2>
+    <h2>What the developer receives</h2>
 
-    <p><strong>Nothing.</strong> We operate no server, no database and no account system. We cannot see your feeds, what you read, what you block, what you bookmark or when you open the app, because none of that is ever sent to us.</p>
+    <p><strong>Nothing.</strong> We operate no server, no database and no account system. We cannot see your feeds, what you read, what you block, what you bookmark or when you open the app, because none of that is ever sent to us. The companies listed under <a href="#connections">Every connection the app makes</a> receive what is listed there, under their own privacy policies.</p>
 
     <p>All of the following is written to a database stored privately on your device and stays there:</p>
 
@@ -87,7 +87,7 @@
 
     <p>Flash does <strong>not</strong> request location, camera, microphone, contacts, calendar, phone or file storage access.</p>
 
-    <h2>Every connection the app makes</h2>
+    <h2 id="connections">Every connection the app makes</h2>
 
     <div class="table-wrap">
     <table>
@@ -108,7 +108,7 @@
         <tr>
           <td>Google's public favicon service</td>
           <td>The domain name of the feed, to fetch its icon</td>
-          <td>Once, when you add a feed</td>
+          <td>Once for each feed you add, including those from the starter pack, an OPML import or a restored backup</td>
         </tr>
         <tr>
           <td>Feedly's public search API</td>
@@ -122,13 +122,18 @@
         </tr>
         <tr>
           <td>Google AdMob, with Google's consent form</td>
-          <td>Your advertising ID, device and usage data (such as your device model, IP address and how you interact with ads), and your consent choices, for ads and their measurement</td>
-          <td>Only in the version with ads: the consent form first, then while ads are shown in your feed</td>
+          <td>Your advertising ID, your interactions with ads, device information and IP address (from which an approximate location can be worked out), diagnostics from the ads software, and your consent choices, for ads, their measurement and fraud prevention</td>
+          <td>Only in the version with ads, and only after the consent form: the form first, then while ads are shown in your feed. The paid version never starts the ads software</td>
         </tr>
         <tr>
           <td>Google Play Billing</td>
           <td>Your purchase of the one-time unlock, handled by Google Play</td>
           <td>When you buy or restore the unlock, and when the app starts, to check it</td>
+        </tr>
+        <tr>
+          <td>Google ML Kit (runs the on-device summary model)</td>
+          <td>Its own usage and diagnostics data: device model, Android version, the app's name and version, an installation identifier, performance and error data. Never the article or the summary</td>
+          <td>When the summary button is used on a phone with Google's on-device model</td>
         </tr>
       </tbody>
     </table>
@@ -138,7 +143,7 @@
 
     <h3>About the AI summary</h3>
     <p>Summarising is the only feature that can send the content of an article anywhere, and it does so only when you press the button.</p>
-    <p>On supported phones (those with Google's on-device model, Gemini Nano), the summary is made <strong>on your phone</strong> and nothing leaves it.</p>
+    <p>On supported phones (those with Google's on-device model, Gemini Nano), the summary is made <strong>on your phone</strong>: the article and the summary never leave it. The ML Kit component that runs the model sends Google its own diagnostics, listed in the table above.</p>
     <p>On other phones, and for an article too long for the on-device model, Flash can summarise only if you add your own Gemini API key in Settings, under <strong>Advanced</strong>, and accept the terms for it there (you must be 18 or over, as Google's terms require). The article's cleaned text then goes straight from your phone to Google's Gemini API, under your key and your Google account. Any cost is between you and Google, at <a href="https://ai.google.dev/gemini-api/docs/pricing" rel="noopener">Google's prices</a>. Flash has no server in between and no AI account of its own, never stores, reads or shares the article or the summary, and nobody at Flash sees it. The app says this in a short sheet before the first summary is sent. Without a key, a phone without the on-device model has no summaries and sends nothing.</p>
     <p>How Google may use that text is set by the <a href="https://ai.google.dev/gemini-api/terms" rel="noopener">Gemini API terms</a> and the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>. In the European Economic Area, Switzerland and the United Kingdom, Google does not use it to improve its products, including on free quota. Elsewhere, on Google's free tier, Google may use it to improve its products; on a paid tier it does not.</p>
     <p>Your key stays on your phone, encrypted with the Android Keystore. It is not included in Android's backup or in Flash's export files, and the app sends it only to Google, with these requests. You can remove it at any time in Settings, under <strong>Advanced</strong>.</p>
@@ -147,11 +152,11 @@
 
     <p>Flash relies on <strong>Android Auto Backup</strong>, a feature of the Android operating system, which copies app data to your own Google Drive account and restores it when you reinstall or move to a new phone. This is done by Android under your own device settings, not by us, and we have no access to it. Your Gemini API key is never included. You can turn it off in your device's system settings.</p>
 
-    <p>Separately, Flash can export your feeds, folders and blocklist to a file that you save wherever you choose. That file goes only where you send it.</p>
+    <p>Separately, Flash can export your feeds, folders, blocked keywords and bookmarks to a file that you save wherever you choose. That file goes only where you send it.</p>
 
     <h2>Analytics, advertising and tracking</h2>
 
-    <p><strong>Flash contains no analytics library and no crash-reporting library.</strong> We do not build a profile of you, and we do not sell or share information about you. The only advertising is in the version with ads, through Google AdMob, as described below.</p>
+    <p><strong>Flash adds no analytics or crash-reporting library of its own.</strong> The Google components listed above send their own measurement and diagnostics, as described there. We do not build a profile of you, and we do not sell information about you. The only advertising is in the version with ads, through Google AdMob, as described below.</p>
 
     <p>The in-app reader actively <strong>blocks</strong> known advertising and tracking domains while you read, and suppresses websites' notification permission prompts before they can be shown. That stays true in every version.</p>
 
@@ -161,7 +166,7 @@
 
     <ul class="plain-list">
       <li>The advertising provider is <strong>Google AdMob</strong>. It receives your advertising ID, device and usage data (such as your device model, IP address and how you interact with ads) for ads and measurement. See <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">how Google uses information from apps that use its services</a>.</li>
-      <li>Before any ad is requested, Google's consent form asks for your choice, as EU law requires. If you do not consent, only non-personalised ads are shown. You can change your choice at any time in Settings, under <strong>Privacy options</strong>.</li>
+      <li>Before the ads software starts, Google's consent form asks for your choice, as EU law requires. If you do not consent, Google serves only what your choices allow: non-personalised ads, or none. You can change your choice at any time in Settings, under <strong>Privacy options</strong>.</li>
       <li>Ads appear only in the main feed. Never in the reader, your bookmarks, keywords, search or the summary sheet.</li>
       <li>The paid version shows no ads. The ads software is built into the app, but Flash starts it only in the version with ads, after the consent form, and never in the paid version.</li>
     </ul>
@@ -170,13 +175,21 @@
 
     <p>The one-time unlock is bought through <strong>Google Play</strong>, which handles the payment. Flash only learns whether the unlock was bought; it never sees your payment details.</p>
 
+    <h2>Legal bases, transfers and how long data is kept</h2>
+
+    <p><strong>Legal bases.</strong> Personalised ads and the ads software's measurement: your consent (GDPR Art. 6(1)(a)), given or refused in Google's consent form and changeable under Settings, Privacy options. Non-personalised ads and fraud prevention in the version with ads: our legitimate interest in funding the free version (Art. 6(1)(f)). Feed fetching, feed search, favicons, the purchase and summaries with your own key: providing the service you ask for (Art. 6(1)(b)). ML Kit's diagnostics: our legitimate interest in the on-device summary working reliably (Art. 6(1)(f)).</p>
+
+    <p><strong>International transfers.</strong> Google and Feedly may process the data they receive in the United States or other countries. Google LLC is certified under the EU-US Data Privacy Framework. For Feedly, see <a href="https://feedly.com/i/legal/privacy" rel="noopener">Feedly's privacy policy</a>.</p>
+
+    <p><strong>How long data is kept.</strong> Flash keeps nothing off your device: everything in the app stays until you delete it or uninstall the app. Google and Feedly keep what they receive for as long as their own policies say: <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>, <a href="https://feedly.com/i/legal/privacy" rel="noopener">Feedly privacy policy</a>.</p>
+
     <h2>Children</h2>
 
     <p>Flash is a general-audience news reader. It is not directed at children under 13, and we do not knowingly collect information from anyone, of any age.</p>
 
     <h2>Your rights</h2>
 
-    <p>Under the GDPR you have rights of access, correction, erasure, restriction, objection and portability over personal data a company holds about you. In our case there is nothing to exercise them against, because we hold no data about you.</p>
+    <p>Under the GDPR you have rights of access, correction, erasure, restriction, objection and portability over personal data a company holds about you, and you can withdraw a consent at any time (for ads: Settings, Privacy options). We hold no data about you, so for the data the companies above receive, contact them directly; we will help if you ask us.</p>
 
     <p>The data inside the app belongs to you and is under your control: you can delete any feed, article, bookmark or keyword at any time, export your subscriptions to a file, and remove everything permanently by uninstalling the app.</p>
 
@@ -191,8 +204,8 @@
     <p>Questions about this policy, or about anything else:</p>
 
     <div class="panel">
-      <p><strong>DVM Software</strong><br>
-      Barcelona, Spain<br>
+      <p><strong>DVM Software</strong> ([LEGAL NAME])<br>
+      [CONTACT ADDRESS], Spain<br>
       <a href="mailto:flashrssapp@gmail.com">flashrssapp@gmail.com</a></p>
     </div>
 
