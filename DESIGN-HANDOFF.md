@@ -344,7 +344,7 @@ Nothing in sections 1–3 is in this list.
 - **NOT DRAWN · never mocked in any batch:** the onboarding screen and
   starter-pack picker, the add-feed / feed-search sheet, the Settings screen's
   four sections beyond Batch 3's treatment, the OPML and backup rows, the
-  shimmer loading card, and the TV layout beyond the rail tier it shares. All
+  shimmer loading card. All
   inherit the theme and will look consistent, but none has been designed against
   its widget.
 - **CORRECTED · two wrong claims of mine**, in case either is repeated from an
