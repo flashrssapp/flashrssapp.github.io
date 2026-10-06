@@ -6,19 +6,27 @@
 <title>Flash RSS Reader — a private, account-free news reader for Android</title>
 <meta name="description" content="Flash is an Android RSS reader that keeps everything on your device. No account, no tracking, no profile of you. Block the topics you're tired of and read only what you came for.">
 <link rel="canonical" href="https://flashrssapp.github.io/">
-<meta name="theme-color" content="#14a08b">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d1211" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="style.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Ccircle cx='256' cy='256' r='256' fill='%2314A08B'/%3E%3Cpath d='M317 44 L144 286 L231 292 L198 468 L376 202 L287 198 Z' fill='%230E1112'/%3E%3C/svg%3E">
+<link rel="icon" href="img/mosaic-f.svg" type="image/svg+xml">
+<link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Flash RSS Reader">
+<meta property="og:title" content="Flash RSS Reader — a private, account-free news reader for Android">
+<meta property="og:description" content="Flash is an Android RSS reader that keeps everything on your device. No account, no tracking, no profile of you. Block the topics you're tired of and read only what you came for.">
+<meta property="og:url" content="https://flashrssapp.github.io/">
+<meta property="og:image" content="https://flashrssapp.github.io/img/og-image.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
 </head>
 <body>
 
-<header class="masthead">
+<header class="masthead tiled">
   <div class="wrap">
     <a class="nameplate" href="index.html">
-      <svg class="bolt" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
-        <circle cx="256" cy="256" r="256" fill="#14A08B"/>
-        <path d="M317 44 L144 286 L231 292 L198 468 L376 202 L287 198 Z" fill="#0B2320"/>
-      </svg>
+      <img src="img/mosaic-f.svg" alt="" width="32" height="32">
       Flash
     </a>
     <nav>
@@ -30,12 +38,18 @@
   </div>
 </header>
 
+<section class="hero tiled">
+  <div class="wrap">
+    <div class="copy">
+      <p class="eyebrow">Android RSS reader</p>
+      <h1>The news that matters to you. No endless scroll.</h1>
+      <p class="lede">Flash gathers the feeds you choose into one fast, quiet list. Read what's new, and when you're done, it says so. There is no account to create, nothing to sign in to, and nothing that leaves your device unless you ask it to.</p>
+    </div>
+  </div>
+</section>
+
 <main>
   <div class="wrap">
-
-    <p class="eyebrow">Android RSS reader</p>
-    <h1>The news that matters to you. No endless scroll.</h1>
-    <p class="lede">Flash gathers the feeds you choose into one fast, quiet list. There is no account to create, nothing to sign in to, and nothing that leaves your device unless you ask it to.</p>
 
     <div class="panel accent">
       <h3>In closed testing</h3>
@@ -43,6 +57,21 @@
     </div>
 
     <h2>What it does</h2>
+
+    <div class="feature">
+      <h3>Your important sources first</h3>
+      <p>Star a source, and its unread articles come first in your feed, then everything else in time order. Nothing jumps around while you read: the order is set when the list loads.</p>
+    </div>
+
+    <div class="feature">
+      <h3>A feed that ends</h3>
+      <p>When you have read everything, Flash says so: "That's everything for now. See you later." No endless scroll, and nothing that tries to keep you there.</p>
+    </div>
+
+    <div class="feature">
+      <h3>New to RSS? Start with topics</h3>
+      <p>Pick the topics you like on the first screen, or later from <strong>Suggested feeds</strong> when you add a feed. Each topic becomes a category with a few well-known, free-to-read sources in your language. You can also paste any feed address, search for one, or import an OPML file from your old reader.</p>
+    </div>
 
     <div class="feature">
       <h3>Keyword blocking that works</h3>
@@ -60,18 +89,18 @@
     </div>
 
     <div class="feature">
-      <h3>AI summaries, on supported phones or with your own key</h3>
-      <p>The article's key facts, in your language, in about one screen. On supported phones (those with Google's on-device Gemini Nano) the whole thing happens on the handset, offline and free. On other phones you can add your own Gemini API key in Settings, and summaries then use Google's Gemini on your own Google account, at Google's prices, with Google's free allowance. Flash runs no AI service of its own.</p>
+      <h3>AI summaries on supported phones, or with your own Gemini key</h3>
+      <p>The article's key facts, in your language, in about one screen. On supported phones (those with Google's on-device Gemini Nano) the whole thing happens on the handset, offline and free. On other phones you can add your own Gemini API key in Settings: you accept the terms for it first, and summaries then use Google's Gemini on your own Google account, at Google's prices, with Google's free allowance. Flash runs no AI service of its own.</p>
     </div>
 
     <div class="feature">
-      <h3>Built for one hand</h3>
-      <p>Folder tabs, navigation and every action sit in the bottom third of the screen, where your thumb already is. Material You throughout, five colour palettes, and a newspaper mode when you want something calmer.</p>
+      <h3>Calm by design</h3>
+      <p>Your categories are tabs across the top of the feed, so you read one topic at a time. Light and dark, five colour palettes, and a newspaper mode when you want something calmer. On a tablet, articles open in a reading pane beside the list.</p>
     </div>
 
     <div class="feature">
       <h3>Everything else</h3>
-      <p>Folders, bookmarks, full-text search, OPML import and export, a starter pack and suggested feeds for anyone new to RSS, starred sources shown first, background refresh on your schedule, and a reading list that stays exactly where you left it. Available in English, German, Spanish, French and Italian.</p>
+      <p>Bookmarks you can read offline, full-text search, OPML import and export, background refresh on your schedule, and a reading list that stays exactly where you left it. Available in English, German, Spanish, French and Italian.</p>
     </div>
 
     <h2>What it doesn't do</h2>
@@ -93,7 +122,7 @@
     <div class="panel">
       <h3>With ads</h3>
       <p>The whole app. Every feed, folder, filter, alert, bookmark and AI summary. Ads in your feed.</p>
-      <h3>Paid, €7.99, once</h3>
+      <h3>Paid, <span class="num">€7.99</span>, once</h3>
       <p>The same app, with no ads. One payment, not a subscription, and not a monthly fee for something that runs on your own phone.</p>
     </div>
 

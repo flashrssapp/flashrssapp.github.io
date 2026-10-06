@@ -19,19 +19,26 @@ Static HTML. GitHub Pages serves the `main` branch from the repository root, so 
 
 `.nojekyll` is present so Pages serves the files as-is rather than running them through Jekyll.
 
+## Look
+
+Quiet Ink, as in the app (6 Oct 2026). Colours are CSS custom properties at the top of `style.css`, copied from the app's theme (`lib/theme/app_theme.dart`): teal `#0E6A70` (dark `#7BD0D3`) is the only interactive colour; light and dark follow the visitor's system. The pool-tile mosaic (`img/pool-tile.png`, the app's own texture) sits dim behind the header and the home hero only, at the app's own opacity (7% light, 10% dark), never behind body text.
+
+## Images
+
+`img/` holds the Mosaic F ("Solid F + halo") exactly as exported from the app repo's `icon/mosaic-f/`: `mosaic-f.svg` (header and favicon), `favicon-32.png`, `apple-touch-icon.png`, `icon-192.png`, and `og-image.png` (the Play icon, used for link previews). Re-export them there; never redraw.
+
 ## Fonts
 
-`fonts/` contains PT Serif (Regular and Bold) converted to WOFF2 and served from this repository, so **the site makes no third-party requests at all**: no Google Fonts, no CDN, no analytics, no cookies. That is deliberate. A site whose main claim is that the app does not phone home should not phone home itself.
+`fonts/` holds the app's own fonts as WOFF2, served from this repository, so **the site makes no third-party requests at all**: no Google Fonts, no CDN, no analytics, no cookies. That is deliberate. A site whose main claim is that the app does not phone home should not phone home itself.
 
-PT Serif is © ParaType and licensed under the SIL Open Font License 1.1. The OFL requires the licence to travel with the font, so add `fonts/OFL.txt` (from <https://openfontlicense.org>) before treating redistribution as fully compliant.
+- Literata for headlines, Instrument Sans for text, JetBrains Mono (subset) for numbers and prices only.
+- All three are under the SIL Open Font License 1.1; `fonts/OFL.txt` carries their copyright lines and the licence.
 
 ## Editing
 
 No build step, no dependencies. Open the HTML files and edit them.
 
-Shared styles live in `style.css`. Colours are CSS custom properties at the top: `--teal` is `#14A08B`, taken from the launcher icon, and `--amber` is `#E07A1F`, the app's default palette accent.
-
-The masthead and footer are duplicated across all four pages. Four copies is simpler than a build step at this size, but change one and change the rest.
+The masthead and footer are duplicated across all four pages. Four copies is simpler than a build step at this size, but change one and change the rest. `terms.html#your-own-gemini-key` is linked from inside the app: keep that anchor.
 
 ## Keep accurate
 

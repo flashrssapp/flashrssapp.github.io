@@ -6,19 +6,27 @@
 <title>Privacy Policy — Flash RSS Reader</title>
 <meta name="description" content="Flash RSS Reader collects no personal data. This policy lists every connection the app makes, what it sends and why.">
 <link rel="canonical" href="https://flashrssapp.github.io/privacy.html">
-<meta name="theme-color" content="#14a08b">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d1211" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="style.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Ccircle cx='256' cy='256' r='256' fill='%2314A08B'/%3E%3Cpath d='M317 44 L144 286 L231 292 L198 468 L376 202 L287 198 Z' fill='%230E1112'/%3E%3C/svg%3E">
+<link rel="icon" href="img/mosaic-f.svg" type="image/svg+xml">
+<link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Flash RSS Reader">
+<meta property="og:title" content="Privacy Policy — Flash RSS Reader">
+<meta property="og:description" content="Flash RSS Reader collects no personal data. This policy lists every connection the app makes, what it sends and why.">
+<meta property="og:url" content="https://flashrssapp.github.io/privacy.html">
+<meta property="og:image" content="https://flashrssapp.github.io/img/og-image.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
 </head>
 <body>
 
-<header class="masthead">
+<header class="masthead tiled">
   <div class="wrap">
     <a class="nameplate" href="index.html">
-      <svg class="bolt" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
-        <circle cx="256" cy="256" r="256" fill="#14A08B"/>
-        <path d="M317 44 L144 286 L231 292 L198 468 L376 202 L287 198 Z" fill="#0B2320"/>
-      </svg>
+      <img src="img/mosaic-f.svg" alt="" width="32" height="32">
       Flash
     </a>
     <nav>
@@ -58,7 +66,7 @@
       <li>Your bookmarks</li>
       <li>Your keyword blocklist and keyword alerts, and the alerts they have caught</li>
       <li>Your settings</li>
-      <li>Your Gemini API key, if you add one, encrypted with the Android Keystore</li>
+      <li>Your Gemini API key, if you add one, encrypted with the Android Keystore, and whether and when you accepted the terms for it</li>
     </ul>
 
     <h2>Permissions the app requests</h2>
@@ -81,6 +89,7 @@
 
     <h2>Every connection the app makes</h2>
 
+    <div class="table-wrap">
     <table>
       <thead>
         <tr><th>Goes to</th><th>What is sent</th><th>When</th></tr>
@@ -123,13 +132,14 @@
         </tr>
       </tbody>
     </table>
+    </div>
 
     <p>That is the complete list.</p>
 
     <h3>About the AI summary</h3>
     <p>Summarising is the only feature that can send the content of an article anywhere, and it does so only when you press the button.</p>
     <p>On supported phones (those with Google's on-device model, Gemini Nano), the summary is made <strong>on your phone</strong> and nothing leaves it.</p>
-    <p>On other phones, and for an article too long for the on-device model, Flash can summarise only if you add your own Gemini API key in Settings, under <strong>Advanced</strong>. The article's cleaned text then goes straight from your phone to Google's Gemini API, under your key and your Google account. Any cost is between you and Google, at <a href="https://ai.google.dev/gemini-api/docs/pricing" rel="noopener">Google's prices</a>. Flash has no server in between and no AI account of its own, never stores, reads or shares the article or the summary, and nobody at Flash sees it. The app says this in a short sheet before the first summary is sent. Without a key, a phone without the on-device model has no summaries and sends nothing.</p>
+    <p>On other phones, and for an article too long for the on-device model, Flash can summarise only if you add your own Gemini API key in Settings, under <strong>Advanced</strong>, and accept the terms for it there (you must be 18 or over, as Google's terms require). The article's cleaned text then goes straight from your phone to Google's Gemini API, under your key and your Google account. Any cost is between you and Google, at <a href="https://ai.google.dev/gemini-api/docs/pricing" rel="noopener">Google's prices</a>. Flash has no server in between and no AI account of its own, never stores, reads or shares the article or the summary, and nobody at Flash sees it. The app says this in a short sheet before the first summary is sent. Without a key, a phone without the on-device model has no summaries and sends nothing.</p>
     <p>How Google may use that text is set by the <a href="https://ai.google.dev/gemini-api/terms" rel="noopener">Gemini API terms</a> and the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>. In the European Economic Area, Switzerland and the United Kingdom, Google does not use it to improve its products, including on free quota. Elsewhere, on Google's free tier, Google may use it to improve its products; on a paid tier it does not.</p>
     <p>Your key stays on your phone, encrypted with the Android Keystore. It is not included in Android's backup or in Flash's export files, and the app sends it only to Google, with these requests. You can remove it at any time in Settings, under <strong>Advanced</strong>.</p>
 

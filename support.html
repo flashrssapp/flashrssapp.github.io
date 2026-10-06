@@ -6,19 +6,27 @@
 <title>Support &amp; Contact — Flash RSS Reader</title>
 <meta name="description" content="Contact details and answers to common questions about Flash RSS Reader, published by DVM Software, Barcelona.">
 <link rel="canonical" href="https://flashrssapp.github.io/support.html">
-<meta name="theme-color" content="#14a08b">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d1211" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="style.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Ccircle cx='256' cy='256' r='256' fill='%2314A08B'/%3E%3Cpath d='M317 44 L144 286 L231 292 L198 468 L376 202 L287 198 Z' fill='%230E1112'/%3E%3C/svg%3E">
+<link rel="icon" href="img/mosaic-f.svg" type="image/svg+xml">
+<link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Flash RSS Reader">
+<meta property="og:title" content="Support &amp; Contact — Flash RSS Reader">
+<meta property="og:description" content="Contact details and answers to common questions about Flash RSS Reader, published by DVM Software, Barcelona.">
+<meta property="og:url" content="https://flashrssapp.github.io/support.html">
+<meta property="og:image" content="https://flashrssapp.github.io/img/og-image.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
 </head>
 <body>
 
-<header class="masthead">
+<header class="masthead tiled">
   <div class="wrap">
     <a class="nameplate" href="index.html">
-      <svg class="bolt" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
-        <circle cx="256" cy="256" r="256" fill="#14A08B"/>
-        <path d="M317 44 L144 286 L231 292 L198 468 L376 202 L287 198 Z" fill="#0B2320"/>
-      </svg>
+      <img src="img/mosaic-f.svg" alt="" width="32" height="32">
       Flash
     </a>
     <nav>
@@ -69,7 +77,7 @@
     <p>Android backs the whole app up to your own Google account automatically, and restores it when you reinstall or switch phones. You can also export your feeds, folders and blocklist to a file from Settings and save it wherever you like.</p>
 
     <h3>Why doesn't the AI summary work on my phone?</h3>
-    <p>Summaries run on Google's on-device Gemini Nano, which only exists on certain recent handsets. On other phones you can add your own Gemini API key in Settings, under <strong>Advanced</strong> (keys come from <a href="https://aistudio.google.com/apikey" rel="noopener">Google AI Studio</a>); without one there is no summary button. With a key, a failed summary says why: the key is not valid, today's free use is used up, the Google account is out of credit, or the service is not available in your country. If it keeps failing, tell us your phone model.</p>
+    <p>Summaries run on Google's on-device Gemini Nano, which only exists on certain recent handsets. On other phones you can add your own Gemini API key in Settings, under <strong>Advanced</strong> (keys come from <a href="https://aistudio.google.com/apikey" rel="noopener">Google AI Studio</a>): tick the box to accept the <a href="terms.html#your-own-gemini-key">terms for your own key</a>, then paste it and tap Save &amp; test. Without a key there is no summary button. With a key, a failed summary says why: the key is not valid, today's free use is used up, the Google account is out of credit, Google is busy for a moment, or the service is not available in your country. If it keeps failing, tell us your phone model.</p>
 
     <h3>Does Flash show ads?</h3>
     <p>Not in test builds. The released version shows ads in your feed unless you buy the one-time unlock, which removes them. Either way, Flash blocks advertising and tracking domains inside its own article reader, which is a separate thing and stays true in both.</p>
