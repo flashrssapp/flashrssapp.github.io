@@ -42,15 +42,15 @@
   <div class="wrap">
 
     <h1>Privacy Policy</h1>
-    <p class="meta">Effective 6 October 2026. Applies to the Flash RSS Reader Android application, package <code>io.getflash.app</code>.</p>
+    <p class="meta">Effective 7 October 2026. Applies to the Flash RSS Reader Android application, package <code>io.getflash.app</code>.</p>
 
     <div class="panel accent">
-      <p><strong>The short version.</strong> Flash has no accounts and no servers, and its developer receives nothing about you: your feeds, reading, bookmarks and settings stay on your device. Some parts of the app do send data to other companies, each for one job: Google AdMob (only in the version with ads, and only after the consent form), Google Play Billing (the purchase), Feedly (feed search), Google Gemini (summaries, only with your own key and only when you ask), Google's ML Kit (its own diagnostics for on-device summaries), and the websites whose feeds you add. The sections below list every connection and exactly what each one sends.</p>
+      <p><strong>The short version.</strong> Flash has no accounts and no servers, and its developer receives nothing about you: your feeds, reading, bookmarks and settings stay on your device. Some parts of the app do send data to other companies, each for one job: Google AdMob (only in the version with ads, and only after the consent form), Google Play Billing (the purchase), Feedly (feed search), Google Gemini (summaries, only with your own key and only when you ask), Google's ML Kit (its own diagnostics: at every app start, on every phone, Flash asks it whether on-device summaries are available, and it also runs when a summary is made), and the websites whose feeds you add. The sections below list every connection and exactly what each one sends.</p>
     </div>
 
     <h2>Who we are</h2>
 
-    <p>Flash RSS Reader is published by <strong>DVM Software</strong>, the trade name of [LEGAL NAME], [CONTACT ADDRESS], Spain, who is the data controller for the purposes of the EU General Data Protection Regulation.</p>
+    <p>Flash RSS Reader is published by <strong>DVM Software</strong>, the trade name of David Vicente Martins, [POSTAL ADDRESS], Spain, who is the data controller for the purposes of the EU General Data Protection Regulation.</p>
 
     <p>You can reach us at any time at <a href="mailto:flashrssapp@gmail.com">flashrssapp@gmail.com</a>.</p>
 
@@ -103,7 +103,7 @@
         <tr>
           <td>The website an article is published on</td>
           <td>A normal page load, minus the ad and tracker domains Flash blocks</td>
-          <td>When you open an article, when its thumbnail is shown, and when you bookmark it (the offline copy, and its images if that setting is on)</td>
+          <td>When you open an article, when its thumbnail is shown, when you ask for its summary, and when you bookmark it (the offline copy, and its images if that setting is on)</td>
         </tr>
         <tr>
           <td>Google's public favicon service</td>
@@ -132,8 +132,8 @@
         </tr>
         <tr>
           <td>Google ML Kit (runs the on-device summary model)</td>
-          <td>Its own usage and diagnostics data: device model, Android version, the app's name and version, an installation identifier, performance and error data. Never the article or the summary</td>
-          <td>When the summary button is used on a phone with Google's on-device model</td>
+          <td>Its own usage and diagnostics data: device model, Android version, the app's name and version, a per-installation identifier, and events such as the feature starting up or a model download. Never the article or the summary. On phones that support it, Flash may ask Android to download Google's on-device AI model</td>
+          <td>At every app start, on every phone, paid or free, when Flash asks ML Kit whether on-device summaries are available; and again when a summary is made</td>
         </tr>
       </tbody>
     </table>
@@ -177,7 +177,7 @@
 
     <h2>Legal bases, transfers and how long data is kept</h2>
 
-    <p><strong>Legal bases.</strong> Personalised ads and the ads software's measurement: your consent (GDPR Art. 6(1)(a)), given or refused in Google's consent form and changeable under Settings, Privacy options. Non-personalised ads and fraud prevention in the version with ads: our legitimate interest in funding the free version (Art. 6(1)(f)). Feed fetching, feed search, favicons, the purchase and summaries with your own key: providing the service you ask for (Art. 6(1)(b)). ML Kit's diagnostics: our legitimate interest in the on-device summary working reliably (Art. 6(1)(f)).</p>
+    <p><strong>Legal bases.</strong> Personalised ads and the ads software's measurement: your consent (GDPR Art. 6(1)(a)), given or refused in Google's consent form and changeable under Settings, Privacy options. Non-personalised ads and fraud prevention in the version with ads: our legitimate interest in funding the free version (Art. 6(1)(f)). Feed fetching, feed search, favicons, the purchase and summaries with your own key: providing the service you ask for (Art. 6(1)(b)). ML Kit's diagnostics: our legitimate interest in knowing whether the on-device summary feature can be offered on this phone and keeping it working (Art. 6(1)(f)).</p>
 
     <p><strong>International transfers.</strong> Google and Feedly may process the data they receive in the United States or other countries. Google LLC is certified under the EU-US Data Privacy Framework. For Feedly, see <a href="https://feedly.com/i/legal/privacy" rel="noopener">Feedly's privacy policy</a>.</p>
 
@@ -204,8 +204,8 @@
     <p>Questions about this policy, or about anything else:</p>
 
     <div class="panel">
-      <p><strong>DVM Software</strong> ([LEGAL NAME])<br>
-      [CONTACT ADDRESS], Spain<br>
+      <p><strong>DVM Software</strong> (David Vicente Martins)<br>
+      [POSTAL ADDRESS], Spain<br>
       <a href="mailto:flashrssapp@gmail.com">flashrssapp@gmail.com</a></p>
     </div>
 
