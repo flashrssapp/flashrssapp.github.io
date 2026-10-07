@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bridge-test-untouched</title>
+<style>
+  body { font: 22px/1.5 sans-serif; margin: 24px; }
+  #title { font-weight: bold; font-size: 34px; }
+  .ok { color: #1f8a4c; } .bad { color: #d1242f; }
+</style>
+</head>
+<body>
+<h1>SEC-001 bridge check</h1>
+<p>A sandboxed (cross-origin) iframe below calls the WebView plugin's bridge:
+<code>flutter_inappwebview._callHandler('x', '(top.document.title="pwned",0)', '[]')</code>
+and <code>_callHandler('onPrintRequest', '1', '[]')</code>.</p>
+<p>Top-frame title after 3 s: <span id="title">…</span></p>
+<p id="bridge">bridge object in top frame: …</p>
+<iframe sandbox="allow-scripts" style="width:100%;height:160px;border:2px solid #888"
+  srcdoc="<body style='font:18px sans-serif'><p id=s>iframe: starting…</p><script>
+    var s=document.getElementById('s'); var out=[];
+    try {
+      if (typeof flutter_inappwebview === 'undefined') { out.push('no bridge object in iframe'); }
+      else {
+        flutter_inappwebview._callHandler('x', '(top.document.title=&quot;pwned&quot;,0)', '[]');
+        out.push('called _callHandler (title payload)');
+        flutter_inappwebview._callHandler('onPrintRequest', '1', '[]');
+        out.push('called _callHandler (onPrintRequest)');
+      }
+    } catch (e) { out.push('threw: ' + e); }
+    s.textContent = 'iframe: ' + out.join(' · ');
+  </script></body>">
+</iframe>
+<script>
+  document.getElementById('bridge').textContent =
+    'bridge object in top frame: ' + (typeof window.flutter_inappwebview) +
+    (window.flutter_inappwebview && typeof window.flutter_inappwebview._callHandler === 'function' ? ' with _callHandler' : '');
+  setTimeout(function () {
+    var t = document.title;
+    var el = document.getElementById('title');
+    el.textContent = t;
+    el.className = t === 'bridge-test-untouched' ? 'ok' : 'bad';
+  }, 3000);
+</script>
+</body>
+</html>

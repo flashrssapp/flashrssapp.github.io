@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Flash bridge test (temporary)</title>
+    <link>https://flashrssapp.github.io/t/bridge.html</link>
+    <description>Temporary feed for the SEC-001 device check, 7 Oct 2026. Remove after.</description>
+    <item>
+      <title>SEC-001 bridge check page</title>
+      <link>https://flashrssapp.github.io/t/bridge.html</link>
+      <guid>https://flashrssapp.github.io/t/bridge.html</guid>
+      <pubDate>Wed, 07 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Opens the bridge test page in the reader.</description>
+    </item>
+  </channel>
+</rss>
